@@ -1,7 +1,32 @@
+<style>
+h1{
+  color: red;
+  border: 5px solid black;
+  width: 25%;
+  text-align: center
+}
+</style>
+
 <p><a href="/hospitals">Hospitals</a></p>
 
 <h1><%= @hospital.name %></h1>
+<%# 
+<p style="color:blue">Hospital rating: <%= @hospital.rating %></p>
 
-<p>Hospital rating: <%= @hospital.rating %></p>
-<p>Trauma services :<%= @hospital.trauma %></p>
-<p>Research lab: <%= @hospital.research %></p>
+<p>
+  <span style="color: blue;">Hospital rating:</span>
+  <span><%= @hospital.rating %></span>
+  <span>/ 5</span>
+</p>
+
+<% if @hospital.trauma == true %>
+  <p> This facility has a trauma center</>
+<% else %>
+  <p> This facility does not have a trauma center</>
+<% end %>
+
+<% if @hospital.research == true %>
+  <p> This facility is has a research branch</>
+<% else %>
+  <p> This facility does not have a research branch</>
+<% end %>
