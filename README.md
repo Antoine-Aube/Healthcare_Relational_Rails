@@ -1,5 +1,7 @@
 # README
 
+[Database Schema](https://erd.dbdesigner.net/designer/schema/1692638780-farmer-s-market)
+
 ## Iteration 1
 CRUD
 
@@ -14,7 +16,7 @@ When I visit '/hospitals'
 Then I see the name of each hospital record in the system
 ```
 ```
-[ ] done
+[x] done
 
 User Story 2, hospital Show 
 

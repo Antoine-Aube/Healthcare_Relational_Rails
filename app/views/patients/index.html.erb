@@ -1,0 +1,23 @@
+<style>
+h1{
+  color: red;
+  border: 5px solid black;
+  width: 25%;
+  text-align: center
+}
+</style>
+
+<h1>Patients Index</h1>
+
+<p><a href="/hospitals">Hospitals</a></p>
+
+<% @patients.each do |patient| %>
+  <%= patient.name %><br>
+  <%= patient.age %><br>
+  <%= patient.ailment %><br>
+ 
+  <span style="color:blue" >In Patient:</span>
+  <span><%= patient.in_patient%></span><br>
+  <br>
+
+<% end %>
