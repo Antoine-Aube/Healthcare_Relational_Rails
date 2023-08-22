@@ -1,0 +1,14 @@
+<style>
+h1{
+  color: red;
+  border: 5px solid black;
+  width: 25%;
+  text-align: center
+}
+</style>
+
+<h1>Hospitals Index</h1>
+<p><a href="/">Homepage</a></p>
+<% @hospitals.each do |hospital|%>
+  <%= hospital.name %>
+<% end %>
