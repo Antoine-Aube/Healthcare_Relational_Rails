@@ -13,11 +13,11 @@ h1{
 
 <% @patients.each do |patient| %>
   <%= patient.name %><br>
-  <%= patient.age %><br>
-  <%= patient.ailment %><br>
- 
+  <span style="color:blue" >Age:</span>
+  <span><%= patient.age %><br></span>
+  <span style="color:blue" >Symptoms:</span>
+  <span><%= patient.ailment %><br></span>
   <span style="color:blue" >In Patient:</span>
   <span><%= patient.in_patient%></span><br>
   <br>
-
 <% end %>
