@@ -5,6 +5,7 @@ class HospitalsController < ApplicationController
 
   def show 
     @hospital = Hospital.find(params[:id])
+    @patient_count = Patient.where("hospital_id = ?", params[:id]).count
   end
 
   def show_patients
