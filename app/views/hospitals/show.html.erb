@@ -10,26 +10,16 @@ h1{
 <p><a href="/hospitals">Hospitals</a></p>
 
 <h1><%= @hospital.name %></h1>
-<%# 
-<p style="color:blue">Hospital rating: <%= @hospital.rating %></p>
 
-<p>
-  <span style="color: blue;">Hospital rating:</span>
-  <span><%= @hospital.rating %></span>
-  <span>/ 5</span>
-</p>
-
-<% if @hospital.trauma == true %>
-  <p> This facility has a trauma center</>
-<% else %>
-  <p> This facility does not have a trauma center</>
-<% end %>
-
-<% if @hospital.research == true %>
-  <p> This facility has a research branch</>
-<% else %>
-  <p> This facility does not have a research branch</>
+<table>
+<% @hospital.attributes.each_pair do |key, value|%>
+<tr>
+<td style="color:blue"><%= key %>: </td>
+<td><%= value %></td>
+</tr>
 <% end %>
 <br>
+</table>
 
-<a href= "/hospitals/<%= @hospital.id %>/patients">patients</a>
+
+<a href= "/hospitals/<%= @hospital.id %>/patients"><%= @hospital.name %> patients</a>

@@ -9,7 +9,8 @@ h1{
 
 <h1>Hospitals Index</h1>
 <p><a href="/">Homepage</a></p>
+
 <% @hospitals.each do |hospital|%>
-  <%= hospital.name %><br>
+  <h3><%= hospital.name %> Established: <%= hospital.created_at %><br></h3>
   <br>
 <% end %>
