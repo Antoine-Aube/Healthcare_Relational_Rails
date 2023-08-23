@@ -1,0 +1,15 @@
+<h1>Patients</h1>
+
+<% @patient.each do |patient| %>
+<table>
+<% patient.attributes.each_pair do |key, value|%>
+<tr>
+<td style="color:blue"><%= key %>: </td>
+<td><%= value %></td>
+</tr>
+<% end %>
+<br>
+</table>
+
+
+<% end %>
