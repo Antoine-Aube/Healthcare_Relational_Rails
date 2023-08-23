@@ -6,15 +6,19 @@ h1{
   text-align: center
 }
 </style>
-
+<!-- Links to other index pages-->
+<p><a href="/">Homepage</a></p>
 <p><a href="/hospitals">Hospitals</a></p>
+<p><a href="/patients">Patients</a></p>
+
 
 
 <h1><%= @hospital.name %></h1>
 <!--patient count from @patient_count in hospitals controller -->
-
 <p>This hospital has <%= @patient_count %> patients </p>
-
+<!-- Link to Patients in the hospital-->
+<a href= "/hospitals/<%= @hospital.id %>/patients"><%= @hospital.name %> patients</a>
+<br>
 <table>
   <% @hospital.attributes.each_pair do |key, value|%>
     <tr>
@@ -24,6 +28,3 @@ h1{
   <% end %>
       <br>
 </table>
-
-
-<a href= "/hospitals/<%= @hospital.id %>/patients"><%= @hospital.name %> patients</a>

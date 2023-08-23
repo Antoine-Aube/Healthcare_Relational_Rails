@@ -7,8 +7,12 @@ h1{
 }
 </style>
 
-<h1>Hospitals Index</h1>
+<!-- Links to other index pages-->
 <p><a href="/">Homepage</a></p>
+<p><a href="/hospitals">Hospitals</a></p>
+<p><a href="/patients">Patients</a></p>
+
+<h1>Hospitals Index</h1>
 
 <% @hospitals.each do |hospital|%>
   <h3><%= hospital.name %> Established: <%= hospital.created_at %><br></h3>
