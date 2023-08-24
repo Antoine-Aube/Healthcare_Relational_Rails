@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   get "/", to: "welcome#index"
 
   get "/hospitals", to: "hospitals#index"
+  get "/hospitals/new", to: "hospitals#new"
+  post "/hospitals", to: "hospitals#create"
   get "/hospitals/:id", to: "hospitals#show"
   get "/hospitals/:id/patients", to: "hospital_patients#index"
+
   
   get "/patients", to: "patients#index"
   get "/patients/:id", to: "patients#show"

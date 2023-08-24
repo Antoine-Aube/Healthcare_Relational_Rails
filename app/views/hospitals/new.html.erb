@@ -1,0 +1,14 @@
+<h1>Enter information for a new Hospital</h1>
+
+<form action="/hospitals" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="name">Hospital Name:</label>
+  <input type="text" id="name" name="hospital[name]"><br>
+  <label for="rating">Rating:</label>
+  <input type="text" id="rating" name="hospital[rating]"><br>
+  <label for="trauma">Trauma:</label>
+  <input type="checkbox" id="trauma" name="hospital[trauma]"><br>
+  <label for="research">Research:</label>
+  <input type="checkbox" id="research" name="hospital[research]"><br>
+  <input type="submit" id="submit" name="submit">
+</form>
