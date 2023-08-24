@@ -8,6 +8,15 @@ RSpec.describe Hospital, type: :model do
   describe "relationship" do 
     it{should have_many :patients}
   end
+
+  xdescribe "validations" do 
+    it{should validate_presence_of(:name)}
+    it{should validate_presence_of(:rating)}
+    it{should allow_value(true).for(:research)}
+    it{should allow_value(false).for(:research)}
+    it{should allow_value(true).for(:trauma)}
+    it{should allow_value(false).for(:trauma)}
+  end
   
 
   describe "Initialize" do 

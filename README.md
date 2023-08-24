@@ -26,7 +26,7 @@ Then I see the hospital with that id including the hospital's attributes
 (data from each column that is on the hospital table)
 ```
 ```
-[ ] done
+[x] done
 
 User Story 3, patient Index 
 
@@ -36,7 +36,7 @@ Then I see each patient in the system including the patient's attributes
 (data from each column that is on the patient table)
 ```
 ```
-[ ] done
+[x] done
 
 User Story 4, patient Show 
 
@@ -46,7 +46,7 @@ Then I see the patient with that id including the patient's attributes
 (data from each column that is on the patient table)
 ```
 ```
-[ ] done
+[x] done
 User Story 5, hospital patientren Index 
 
 As a visitor
@@ -56,7 +56,7 @@ Then I see each patient that is associated with that hospital with each patient'
 ActiveRecord
 ```
 ```
-[ ] done
+[x] done
 
 User Story 6, hospital Index sorted by Most Recently Created 
 
@@ -66,7 +66,7 @@ I see that records are ordered by most recently created first
 And next to each of the records I see when it was created
 ```
 ```
-[ ] done
+[x] done
 
 User Story 7, hospital patient Count
 
@@ -76,7 +76,7 @@ I see a count of the number of patientren associated with this hospital
 Usability
 ```
 ```
-[ ] done
+[x] done
 
 User Story 8, patient Index Link
 
@@ -85,7 +85,7 @@ When I visit any page on the site
 Then I see a link at the top of the page that takes me to the patient Index
 ```
 ```
-[ ] done
+[x] done
 
 User Story 9, hospital Index Link
 
@@ -94,7 +94,7 @@ When I visit any page on the site
 Then I see a link at the top of the page that takes me to the hospital Index
 ```
 ```
-[ ] done
+[x] done
 
 User Story 10, hospital patient Index Link
 
@@ -105,7 +105,7 @@ Then I see a link to take me to that hospital's `patient_table_name` page ('/hos
 ## Iteration 2
 CRUD
 ```
-[ ] done
+[x] done
 
 User Story 11, hospital Creation 
 
@@ -121,7 +121,7 @@ a new hospital record is created,
 and I am redirected to the hospital Index page where I see the new hospital displayed.
 ```
 ```
-[ ] done
+[x] done
 
 User Story 12, hospital Update 
 
@@ -137,7 +137,7 @@ the hospital's info is updated,
 and I am redirected to the hospital's Show page where I see the hospital's updated info
 ```
 ```
-[ ] done
+[x] done
 
 User Story 13, hospital patient Creation 
 
@@ -153,7 +153,7 @@ a new patient object/row is created for that hospital,
 and I am redirected to the hospital patients Index page where I can see the new patient listed
 ```
 ```
-[ ] done
+[x] done
 
 User Story 14, patient Update 
 
@@ -169,7 +169,7 @@ and I am redirected to the patient Show page where I see the patient's updated i
 ActiveRecord
 ```
 ```
-[ ] done
+[x] done
 
 User Story 15, patient Index only shows `true` Records 
 
@@ -190,7 +190,7 @@ I'm taken back to the hospital's patientren Index Page where I see all of the ho
 Usability
 ```
 ```
-[ ] done
+[x] done
 
 User Story 17, hospital Update From hospital Index Page 
 
@@ -201,7 +201,7 @@ When I click the link
 I should be taken to that hospital's edit page where I can update its information just like in User Story 12
 ```
 ```
-[ ] done
+[x] done
 
 User Story 18, patient Update From patients Index Page 
 
