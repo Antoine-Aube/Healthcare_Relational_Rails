@@ -14,7 +14,7 @@ h1{
 
 
 <h1><%= @hospital.name %></h1>
-<!--patient count from @patient_count in hospitals controller -->
+<!--patient count from hospital model -->
 <p>This hospital has <%= @hospital.patient_count %> patients </p>
 <!-- Link to Patients in the hospital-->
 <a href= "/hospitals/<%= @hospital.id %>/patients"><%= @hospital.name %> patients</a>

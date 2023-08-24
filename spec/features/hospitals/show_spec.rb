@@ -29,5 +29,12 @@ RSpec.describe "Hospitals Index" do
 
       expect(page).to have_content(hospital.name)
     end
+
+    it "has a link to create a new hospital" do 
+      visit "/hospitals"
+
+      click_link "Create New Hospital"
+      expect(current_path).to eq("/hospitals/new")
+    end
   end
 end 

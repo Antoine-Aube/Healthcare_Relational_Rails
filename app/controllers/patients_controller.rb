@@ -28,5 +28,4 @@ class PatientsController < ApplicationController
 
     redirect_to "/patients/#{patient.id}"
   end
-
 end

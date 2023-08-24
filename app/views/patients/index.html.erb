@@ -15,6 +15,7 @@ h1{
 
 
 <% @patients.each do |patient| %>
+<%if patient.in_patient?%>
   <a href="patients/<%=patient.id%>">Go to Patient</a>
 <table>
   <% patient.attributes.each_pair do |key, value|%>
@@ -25,5 +26,6 @@ h1{
   <% end %>
       <br>
 </table>
+<% end %>
 <br>
 <% end %>
