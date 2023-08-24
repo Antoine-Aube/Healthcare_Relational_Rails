@@ -5,6 +5,10 @@ RSpec.describe Hospital, type: :model do
   let(:patient_1) {Patient.new}
   let(:patient_2) {Patient.new}
   
+  describe "relationship" do 
+    it{should have_many :patients}
+  end
+  
 
   describe "Initialize" do 
     it{expect(hospital_1).to be_a Hospital}
