@@ -15,6 +15,7 @@ h1{
 <h1>Patients</h1>
 
 <% @hospital.patients.each do |patient| %>
+<a href="patients/<%=patient.id%>">Go to Patient</a>
 <table>
 <% patient.attributes.each_pair do |key, value|%>
 <tr>
@@ -24,6 +25,7 @@ h1{
 <% end %>
 <br>
 </table>
+<br>
 
 
 <% end %>

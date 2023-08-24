@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   post "/hospitals/:id/patients", to: "hospital_patients#create"
   get "/hospitals/:id/patients/new", to: "hospital_patients#new"
   get "/hospitals/:id/patients", to: "hospital_patients#index"
-  
+  get "/hospitals/:id/patients/:id", to: "patients#show"
   get "/hospitals/:id/edit", to: "hospitals#edit"
   patch "/hospitals/:id", to: "hospitals#update"
-
   
+  
+  get "/patients/:id/edit", to: "patients#edit"
+  patch "/patients/:id", to: "patients#update"
   get "/patients", to: "patients#index"
   get "/patients/:id", to: "patients#show"
 end

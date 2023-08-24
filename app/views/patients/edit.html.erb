@@ -1,0 +1,15 @@
+<h1>Edit patient data for <%=@patient.name%></h1>
+
+<form action="/patients/<%= @patient.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH"/>
+  <label for="name">Patient Name:</label>
+  <input type="text" id="name" name="patient[name]" value="<%= @patient.name%>"><br>
+  <label for="Age">Age:</label>
+  <input type="text" id="age" name="patient[age]" value="<%= @patient.age%>"><br>
+  <label for="ailment">Ailment:</label>
+  <input type="text" id="ailment" name="patient[ailment]" value="<%= @patient.ailment %>"><br>
+  <label for="in_patient">In Patient:</label>
+  <input type="checkbox" id="in_patient" name="patient[in_patient]" <%= @in_patient %>><br>
+  <input type="submit" id="submit" name="Update">
+</form>
