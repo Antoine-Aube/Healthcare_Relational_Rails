@@ -9,8 +9,19 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+  <style>
+h1{
+  color: red;
+  border: 5px solid black;
+  width: 25%;
+  text-align: center
+}
+</style>
 
   <body>
+  <p><a href="/">Homepage</a></p>
+  <p><a href="/hospitals">Hospitals</a></p>
+  <p><a href="/patients">Patients</a></p>
     <%= yield %>
   </body>
 </html>

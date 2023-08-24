@@ -1,21 +1,9 @@
-<style>
-h1{
-  color: red;
-  border: 5px solid black;
-  width: 25%;
-  text-align: center
-}
-</style>
-
-<!-- Links to other index pages-->
-<p><a href="/">Homepage</a></p>
-<p><a href="/hospitals">Hospitals</a></p>
-<p><a href="/patients">Patients</a></p>
 
 <h1>Patients</h1>
 
 <% @hospital.patients.each do |patient| %>
 <a href="patients/<%=patient.id%>">Go to Patient</a>
+<a href="/patients/<%= patient.id %>/edit">Edit Patient Data</a>
 <table>
 <% patient.attributes.each_pair do |key, value|%>
 <tr>

@@ -1,24 +1,12 @@
-<style>
-h1{
-  color: red;
-  border: 5px solid black;
-  width: 25%;
-  text-align: center
-}
-</style>
-
-<!-- Links to other index pages-->
-<p><a href="/">Homepage</a></p>
-<p><a href="/hospitals">Hospitals</a></p>
-<p><a href="/patients">Patients</a></p>
 
 <h1>Hospitals Index</h1>
 
 <% @hospitals.each do |hospital|%>
   <a href= "hospitals/<%= hospital.id%>">
-  <h3><%= hospital.name %> Established: <%= hospital.created_at %><br></h3>
+  <h3><%= hospital.name %> Established: <%= hospital.created_at %> <br></h3>
   </a>
+  <a href="/hospitals/<%= hospital.id %>/edit">Edit Hospital Data</a>
   <br>
 <% end %>
-
+<br>
 <a href="/hospitals/new">Create New Hospital</a>
