@@ -18,10 +18,13 @@ h1{
 
 <h1><%= @patient.name %></h1>
 
-<span style="color:blue" >Age:</span>
-<span><%= @patient.age %><br></span>
-<span style="color:blue" >Symptoms:</span>
-<span><%= @patient.ailment %><br></span>
-<span style="color:blue" >In Patient:</span>
-<span><%= @patient.in_patient%></span><br>
+<table>
+  <% @patient.attributes.each_pair do |key, value|%>
+    <tr>
+      <td style="color:blue"><%= key %>: </td>
+      <td><%= value %></td>
+    </tr>
+  <% end %>
+      <br>
+</table>
   

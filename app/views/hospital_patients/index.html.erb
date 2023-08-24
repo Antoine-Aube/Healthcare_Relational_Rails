@@ -14,7 +14,7 @@ h1{
 
 <h1>Patients</h1>
 
-<% @patient.each do |patient| %>
+<% @hospital.patients.each do |patient| %>
 <table>
 <% patient.attributes.each_pair do |key, value|%>
 <tr>

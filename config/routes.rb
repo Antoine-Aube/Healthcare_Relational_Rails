@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get "/hospitals", to: "hospitals#index"
   get "/hospitals/:id", to: "hospitals#show"
-  get "/hospitals/:id/patients", to: "hospitals#show_patients"
+  get "/hospitals/:id/patients", to: "hospital_patients#index"
   
   get "/patients", to: "patients#index"
   get "/patients/:id", to: "patients#show"
