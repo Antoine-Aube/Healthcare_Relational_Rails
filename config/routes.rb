@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post "/hospitals", to: "hospitals#create"
   get "/hospitals/:id", to: "hospitals#show"
   get "/hospitals/:id/patients", to: "hospital_patients#index"
+  get "/hospitals/:id/edit", to: "hospitals#edit"
+  patch "/hospitals/:id", to: "hospitals#update"
 
   
   get "/patients", to: "patients#index"
