@@ -1,5 +1,7 @@
 class Hospital < ApplicationRecord
   has_many :patients
+  validates :name, presence: true
+  validates :rating, presence: true
 
   def patient_count
     patients.count

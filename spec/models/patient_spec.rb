@@ -18,4 +18,13 @@ RSpec.describe Patient, type: :model do
   describe "Initialize" do
     it{expect(patient_1).to be_a Patient}
   end
+
+  describe "#in_patient?" do
+    it "checks if patient is has a value of true in in_patient" do 
+      hospital = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
+      patient = hospital.patients.create!(name: "Jeff", age: 44, ailment: "Broken Leg",in_patient: true)
+
+      expect(patient.in_patient?).to eq(true)
+    end 
+  end
 end
