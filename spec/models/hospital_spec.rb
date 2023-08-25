@@ -23,7 +23,7 @@ RSpec.describe Hospital, type: :model do
     it{expect(hospital_1).to be_a Hospital}
   end
 
-  #how can I test this class method? 
+  
   describe "#patient_count" do 
     it "returns a count of patients as an integer" do 
       hospital = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
