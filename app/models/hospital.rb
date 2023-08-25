@@ -14,4 +14,8 @@ class Hospital < ApplicationRecord
   def order_patients_alphabetically
     self.patients.order("name")
   end
+
+  def adult_patients(patient_age)
+    self.patients.where("age > ?", "#{patient_age}")
+  end
 end

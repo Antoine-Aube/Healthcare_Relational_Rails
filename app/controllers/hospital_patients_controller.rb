@@ -4,11 +4,15 @@ class HospitalPatientsController < ApplicationController
     # require 'pry';binding.pry
     if params[:sorted] == "true"
       @hospital = Hospital.find(params[:id])
+      # require 'pry';binding.pry
       @patients = @hospital.order_patients_alphabetically
-    else 
+    elsif params[:threshold]
+      @patients = @hospital.adult_patients(params[:threshold])
+    else
       @hospital = Hospital.find(params[:id])
       @patients = @hospital.patients
     end
+    
     
   end
 
