@@ -1,10 +1,24 @@
 class HospitalPatientsController < ApplicationController
   def index
     @hospital = Hospital.find(params[:id])
+    # require 'pry';binding.pry
+    if params[:sorted] == "true"
+      @hospital = Hospital.find(params[:id])
+      @patients = @hospital.order_patients_alphabetically
+    else 
+      @hospital = Hospital.find(params[:id])
+      @patients = @hospital.patients
+    end
+    
   end
 
   def new
     @hospital = Hospital.find(params[:id])
+  end
+
+  def ordered_show
+    @hospital = Hospital.find(params[:id])
+    @patients = @hospital.order_patients_alphabetically
   end
 
   def create

@@ -1,9 +1,9 @@
 
 <h1>Patients</h1>
 <!--This link does nothin-->
-<a href="/hospitals/<%= @hospital.id%>/patients">Sort Patient Alphabetically</a><br>
+<a href="/hospitals/<%= @hospital.id%>/patients?sorted=true">Sort Patient Alphabetically</a><br>
 <br>
-<% @hospital.patients.each do |patient| %>
+<% @patients.each do |patient| %>
 <a href="patients/<%=patient.id%>">Go to Patient</a>
 <a href="/patients/<%= patient.id %>/edit">Edit Patient Data</a>
 <table>

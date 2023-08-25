@@ -9,4 +9,7 @@ class Hospital < ApplicationRecord
     Hospital.order("created_at desc")
   end
   
+  def order_patients_alphabetically
+    self.patients.order("name")
+  end
 end
