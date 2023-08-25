@@ -9,7 +9,7 @@ RSpec.describe Hospital, type: :model do
     it{should have_many :patients}
   end
 
-  xdescribe "validations" do 
+  describe "validations" do 
     it{should validate_presence_of(:name)}
     it{should validate_presence_of(:rating)}
     it{should allow_value(true).for(:research)}
