@@ -27,17 +27,6 @@ class HospitalsController < ApplicationController
 
   def edit
     @hospital = Hospital.find(params[:id])
-    if @hospital.trauma == true
-      @trauma = "checked"
-    else 
-      @trauma = nil
-    end
-
-    if @hospital.research == true
-      @research = "checked"
-    else 
-      @research = nil
-    end
   end
   
   def update
