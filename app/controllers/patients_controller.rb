@@ -9,11 +9,6 @@ class PatientsController < ApplicationController
 
   def edit
     @patient = Patient.find(params[:id])
-    if @patient.in_patient == true
-      @in_patient = "checked"
-    else
-      @in_patient = nil
-    end
   end
 
   def update

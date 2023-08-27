@@ -4,7 +4,7 @@ class HospitalPatientsController < ApplicationController
     if params[:sorted] == "true"
       @patients = @hospital.order_patients_alphabetically
     elsif params[:threshold]
-      @patients = @hospital.adult_patients(params[:threshold])
+      @patients = @hospital.age_threshold(params[:threshold])
     else
       @patients = @hospital.patients
     end

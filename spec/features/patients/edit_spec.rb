@@ -4,6 +4,7 @@ RSpec.describe "Patients Edit" do
   before :each do 
    @hospital = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
    @patient = @hospital.patients.create!(name: "Jeff", age: 44, ailment: "Broken Leg",in_patient: true)
+   @patient_2 = @hospital.patients.create!(name: "Lucy", age: 12, ailment: "Runny nose",in_patient: false)
 
  end
   describe "When I visit /patients/:id/edit" do
@@ -31,7 +32,7 @@ RSpec.describe "Patients Edit" do
       uncheck("patient[in_patient]")
 
       click_button "submit"
-      # require 'pry';binding.pry
+    
       expect(current_path).to eq("/patients/#{@patient.id}")
       expect(page).to have_content("Not Jeff")
       expect(page).to have_content(102)

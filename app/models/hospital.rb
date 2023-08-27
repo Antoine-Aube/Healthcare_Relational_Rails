@@ -15,7 +15,7 @@ class Hospital < ApplicationRecord
     self.patients.order("name")
   end
 
-  def adult_patients(patient_age)
+  def age_threshold(patient_age)
     self.patients.where("age > ?", "#{patient_age}")
   end
 end

@@ -10,6 +10,6 @@
   <label for="ailment">Ailment:</label>
   <input type="text" id="ailment" name="patient[ailment]" value="<%= @patient.ailment %>"><br>
   <label for="in_patient">In Patient:</label>
-  <input type="checkbox" id="in_patient" name="patient[in_patient]" <%= @in_patient %>><br>
+  <input type="checkbox" id="in_patient" name="patient[in_patient]" <%= @patient.in_patient ? "checked" : "" %>><br>
   <input type="submit" id="submit" name="Update">
 </form>
