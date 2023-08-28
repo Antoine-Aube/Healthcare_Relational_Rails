@@ -8,7 +8,7 @@
 <form action="/hospitals/<%= hospital.id %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Hospital"/>
+    <input type="submit" value="Delete <%= hospital.name %>"/>
 </form>
 
 <% end %>

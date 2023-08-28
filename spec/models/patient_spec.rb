@@ -15,11 +15,6 @@ RSpec.describe Patient, type: :model do
     it{should allow_value(false).for(:in_patient)}
   end
   
-  describe "Initialize" do
-    it{expect(patient_1).to be_a Patient}
-  end
-
-  #how can I test this class method? 
   describe "#in_patient?" do
     it "checks if patient is has a value of true in in_patient" do 
       hospital = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)

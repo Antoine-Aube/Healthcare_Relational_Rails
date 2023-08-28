@@ -44,6 +44,19 @@ RSpec.describe "Hospitals Index" do
       expect(current_path).to eq("/hospitals/new")
     end
 
+    it "has a link to delete each hospital" do 
+      visit "/hospitals"
+
+      expect(page).to have_content("St. Mary's")
+      expect(page).to have_content("Intermountain")
+
+      click_button("Delete St. Mary's")
+      expect(current_path).to eq("/hospitals")
+
+      expect(page).to_not have_content("St. Mary's")
+      expect(page).to have_content("Intermountain")
+    end
+
     it "has a link to edit hospital data for each hospital" do 
       visit "/hospitals"
 

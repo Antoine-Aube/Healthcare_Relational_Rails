@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Hospital, type: :model do  
   describe "relationship" do 
-    it{should have_many :patients}
+    it{should have_many(:patients).dependent(:destroy)}
   end
   
   describe "validations" do 
@@ -13,12 +13,7 @@ RSpec.describe Hospital, type: :model do
     it{should allow_value(true).for(:trauma)}
     it{should allow_value(false).for(:trauma)}
   end
-  
-  describe "Initialize" do 
-    hospital = Hospital.new(name: "Hospital")
-    it{expect(hospital).to be_a Hospital}
-  end
-  
+ 
   describe "#patient_count" do 
   it "returns a count of patients as an integer" do 
     hospital_1 = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
