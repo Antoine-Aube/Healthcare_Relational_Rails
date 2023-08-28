@@ -23,4 +23,9 @@ class PatientsController < ApplicationController
 
     redirect_to "/patients/#{patient.id}"
   end
+
+  def destroy
+    @patients = Patient.destroy(params[:id])
+    redirect_to "/patients"
+  end
 end

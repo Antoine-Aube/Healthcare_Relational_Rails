@@ -6,6 +6,11 @@
 <%if patient.in_patient?%>
   <a href="patients/<%=patient.id%>">Go to Patient</a>
   <a href="/patients/<%= patient.id %>/edit">Edit Patient Data</a>
+<form action="/patients/<%= patient.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete patient"/>
+</form>
 <table>
   <% patient.attributes.each_pair do |key, value|%>
     <tr>
