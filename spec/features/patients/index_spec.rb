@@ -5,8 +5,9 @@ RSpec.describe "Patients Index" do
     @hospital = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
     @patient_1 = @hospital.patients.create!(name: "Jeff", age: 44, ailment: "Broken Leg",in_patient: true)
     @patient_2 = @hospital.patients.create!(name: "Vanessa", age: 23, ailment: "Broken Arm",in_patient: true)
+    @patient_3 = @hospital.patients.create!(name: "Eric", age: 2, ailment: "Common Cold",in_patient: false)
   end 
-  
+
   describe "index" do 
     it "lists all of a patients necessary attributes" do 
       visit "/patients"
@@ -15,6 +16,13 @@ RSpec.describe "Patients Index" do
       expect(page).to have_content(@patient_1.age)
       expect(page).to have_content(@patient_1.ailment)
       expect(page).to have_content(@patient_1.in_patient)
+    end
+
+    it "only displays patients that have 'true' as a value for in_patient" do 
+      visit "/patients"
+      
+      expect(page).to have_content(@patient_1.name)
+      expect(page).to_not have_content(@patient_3.name)
     end
 
     it "has a link that goes to view that particular patient" do 
