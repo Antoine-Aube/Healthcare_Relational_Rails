@@ -31,6 +31,7 @@ RSpec.describe "Hospitals New" do
       expect(current_path).to eq("/hospitals")
 
       expect(Hospital.all.count).to eq(1)
+      expect(page).to have_content("St. Mary's")
     end
   end
 end
