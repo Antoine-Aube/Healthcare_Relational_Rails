@@ -215,7 +215,7 @@ I should be taken to that `patient_table_name` edit page where I can update its 
 CRUD
 
 ```
-[ ] done
+[x] done
 
 User Story 19, hospital Delete 
 
@@ -228,7 +228,7 @@ the hospital is deleted, and all patient records are deleted
 and I am redirected to the hospital index page where I no longer see this hospital
 ```
 ```
-[ ] done
+[x] done
 
 User Story 20, patient Delete 
 
@@ -242,7 +242,7 @@ and I am redirected to the patient index page where I no longer see this patient
 ActiveRecord
 ```
 ```
-[ ] done
+[x] done
 
 User Story 21, Display Records Over a Given Threshold 
 
@@ -254,7 +254,7 @@ Then I am brought back to the current index page with only the records that meet
 Usability
 ```
 ```
-[ ] done
+[x] done
 
 User Story 22, hospital Delete From hospital Index Page 
 
@@ -265,7 +265,7 @@ When I click the link
 I am returned to the hospital Index Page where I no longer see that hospital
 ```
 ```
-[ ] done
+[x] done
 
 User Story 23, patient Delete From patients Index Page 
 
