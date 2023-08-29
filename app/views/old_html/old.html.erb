@@ -79,3 +79,13 @@
 <a href="/hospitals/<%=@hospital.id%>/patients/new">Create New Patient</a>
 
 <a href="/hospitals/<%= @hospital.id%>/patients?sorted=true">Sort Patients Alphabetically</a><br>
+
+
+<!--Sort by age form-->
+
+<form action="/hospitals/<%= @hospital.id%>/patients" method="get">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="threshold">Only return records with patients older than:</label>
+  <input type="integer" id="threshold" name="threshold">
+  <input type="submit" id="submit" name="submit">
+</form>

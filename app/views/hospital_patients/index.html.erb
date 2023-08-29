@@ -19,12 +19,10 @@
 <br>
 <% end %>
 <br>
-
-<form action="/hospitals/<%= @hospital.id%>/patients" method="get">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="threshold">Only return records with patients older than:</label>
-  <input type="integer" id="threshold" name="threshold">
-  <input type="submit" id="submit" name="submit">
-</form>
-
+<%= form_with url: "/hospitals/#{@hospital.id}/patients", method: :get do |form|%>
+  <%= form.label :threshold, "Only return records with patients odler than:" %>
+  <%= form.number_field :threshold %>
+  <%= form.submit "submit"%>
+<% end %>
+<br>
 <%= link_to "Create New Patient", "/hospitals/#{@hospital.id}/patients/new"  %>
