@@ -277,7 +277,7 @@ I should be taken to the `patient_table_name` index page where I no longer see t
 ```
 ## Extensions
 ```
-[ ] done
+[x] done
 
 Extension 1: Sort hospitals by Number of patientren 
 

@@ -21,8 +21,8 @@ class Hospital < ApplicationRecord
 
   def self.order_by_patient_count
     left_joins(:patients)
-      .select('hospitals.*, COUNT(patients.id) AS patient_count')
-      .group('hospitals.id')
-      .order('patient_count DESC')
+    .select('hospitals.*, COUNT(patients.id) AS patient_count')
+    .group('hospitals.id')
+    .order('patient_count DESC')
   end
 end
