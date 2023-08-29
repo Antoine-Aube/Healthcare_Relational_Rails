@@ -3,7 +3,7 @@
 
 
 <% @patients.each do |patient| %>
-<%if patient.in_patient?%>
+
   <a href="patients/<%=patient.id%>">Go to Patient <%= patient.name %></a>
   <a href="/patients/<%= patient.id %>/edit">Edit Patient <%= patient.name %> Data</a>
 <form action="/patients/<%= patient.id %>" method="POST">
@@ -22,4 +22,3 @@
 </table>
 <% end %>
 <br>
-<% end %>
