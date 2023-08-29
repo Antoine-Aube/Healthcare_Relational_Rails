@@ -3,7 +3,11 @@ require "rails_helper"
 RSpec.describe "Hospitals Index" do 
   before :each do 
     @hospital_1 = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
+    @patient_1 = @hospital_1.patients.create(name: "Jeff", age: 17, ailment: "Broken Leg",in_patient: false)
+    @patient_2 = @hospital_1.patients.create(name: "Ted", age: 12, ailment: "Broken Face",in_patient: true)
+    @patient_3 = @hospital_1.patients.create!(name: "Carla", age: 36, ailment: "Broken Face",in_patient: true)
     @hospital_2 = Hospital.create!(name: "Intermountain", rating: 5, trauma: true, research: false, created_at: 1.day.ago)
+    @patient_4 = @hospital_2.patients.create!(name: "Amanda", age: 23, ailment: "Broken Toe",in_patient: true)
     @hospital_3 = Hospital.create!(name: "University Hospital", rating: 5, trauma: true, research: true, created_at: 2.days.ago)
   end
 
@@ -29,6 +33,16 @@ RSpec.describe "Hospitals Index" do
 
       expect(@hospital_1.name).to appear_before(@hospital_2.name)
       expect(@hospital_2.name).to appear_before(@hospital_3.name)
+    end
+
+    it "sorts hospitals on the page by number of patients" do 
+      visit "/hospitals"
+
+      click_link "Sort Hospitals by Patient Count"
+
+      expect(@hospital_1.name).to appear_before(@hospital_2.name)
+      expect(@hospital_2.name).to appear_before(@hospital_3.name)
+      
     end
     
     it "has a page title of Hospitals Index" do 

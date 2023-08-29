@@ -3,6 +3,7 @@
 
 <% @hospitals.each do |hospital|%>
   <%= link_to "#{hospital.name} Established #{hospital.created_at}", "hospitals/#{hospital.id}"%>
+  <p>Patient Count: <%= hospital.patient_count %>
   <br>
   <%= link_to "Edit #{hospital.name} Data", "/hospitals/#{hospital.id}/edit" %>
   <%= button_to "Delete #{hospital.name}", "/hospitals/#{hospital.id}", method: :delete  %>
@@ -10,4 +11,5 @@
   <br>
 <% end %>
 <br>
-<a href="/hospitals/new">Create New Hospital</a>
+<%= link_to "Create New Hospital", "/hospitals/new" %>
+<%= link_to "Sort Hospitals by Patient Count ", "/hospitals?sortedpatients=true" %>

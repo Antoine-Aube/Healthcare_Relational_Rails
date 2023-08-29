@@ -1,7 +1,10 @@
 class HospitalsController < ApplicationController
   
   def index
-    @hospitals = Hospital.all.order_by_creation 
+    @hospitals = Hospital.all.order_by_creation
+     if params[:sortedpatients] == "true"
+      @hospitals = Hospital.all.order_by_patient_count
+     end
   end
 
   def show 

@@ -56,4 +56,18 @@ RSpec.describe Hospital, type: :model do
       expect(hospital_1.age_threshold(18)).to eq([patient_3, patient_4])
     end
   end
+  
+  describe "#order_by_patient_count" do 
+    it "sets all hospital in desc order by patient count" do
+        hospital_1 = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
+          patient_1 = hospital_1.patients.create(name: "Jeff", age: 17, ailment: "Broken Leg",in_patient: false)
+          patient_2 = hospital_1.patients.create(name: "Ted", age: 12, ailment: "Broken Face",in_patient: true)
+          patient_3 = hospital_1.patients.create!(name: "Carla", age: 36, ailment: "Broken Face",in_patient: true)
+        hospital_2 = Hospital.create!(name: "Intermoutain", rating: 5, trauma: true, research: true, created_at: 1.day.ago)
+          patient_4 = hospital_2.patients.create!(name: "Amanda", age: 23, ailment: "Broken Toe",in_patient: true)
+        hospital_3 = Hospital.create!(name: "Denver General", rating: 5, trauma: true, research: false, created_at: 2.days.ago)
+
+        expect(Hospital.order_by_patient_count).to eq([hospital_1, hospital_2, hospital_3])
+    end 
+  end
 end
