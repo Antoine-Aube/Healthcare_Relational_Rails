@@ -31,4 +31,8 @@ class Hospital < ApplicationRecord
       .group(:id)
       .order("count(patients.id) desc")
   end
+
+  def self.exact_search(word)
+    Hospital.where(name: word)
+  end
 end

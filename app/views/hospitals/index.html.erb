@@ -1,6 +1,11 @@
 
 <h1>Hospitals Index</h1>
-
+<%= form_with url: "/hospitals", method: :get, data: {turbo: false} do |form| %>
+  <%= form.label :exact, "Search for exact keyword:" %>
+  <%= form.text_field :exact %><br>
+  <%= form.submit "Search" %>
+<% end %>
+<br>
 <% @hospitals.each do |hospital|%>
   <%= link_to "#{hospital.name} Established #{hospital.created_at}", "hospitals/#{hospital.id}"%>
   <p>Patient Count: <%= hospital.patient_count %>

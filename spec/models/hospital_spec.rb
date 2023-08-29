@@ -13,7 +13,7 @@ RSpec.describe Hospital, type: :model do
     it{should allow_value(true).for(:trauma)}
     it{should allow_value(false).for(:trauma)}
   end
- 
+
   describe "#patient_count" do 
   it "returns a count of patients as an integer" do 
     hospital_1 = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
@@ -29,7 +29,6 @@ RSpec.describe Hospital, type: :model do
       hospital_1 = Hospital.create!(name: "St. Mary's", rating: 4, trauma: true, research: false)
       hospital_2 = Hospital.create!(name: "Intermoutain", rating: 5, trauma: true, research: true, created_at: 1.day.ago)
       hospital_3 = Hospital.create!(name: "Denver General", rating: 5, trauma: true, research: false, created_at: 2.days.ago)
-      # require 'pry';binding.pry
       expect(Hospital.order_by_creation).to eq([hospital_1, hospital_2, hospital_3])
     end
   end

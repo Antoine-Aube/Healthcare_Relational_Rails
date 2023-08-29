@@ -20,7 +20,7 @@
 <% end %>
 <br>
 <%= form_with url: "/hospitals/#{@hospital.id}/patients", method: :get do |form|%>
-  <%= form.label :threshold, "Only return records with patients odler than:" %>
+  <%= form.label :threshold, "Only return records with patients older than:" %>
   <%= form.number_field :threshold %>
   <%= form.submit "submit"%>
 <% end %>
