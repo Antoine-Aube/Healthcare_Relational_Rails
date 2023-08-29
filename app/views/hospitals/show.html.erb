@@ -20,8 +20,5 @@
 <a href="/hospitals/<%= @hospital.id %>/edit">Edit Hospital Data</a>
 <br>
 <br>
-<form action="/hospitals/<%= @hospital.id %>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete hospital"/>
-</form>
+<%= button_to "Delete #{@hospital.name}", "/hospitals/#{@hospital.id}", method: :delete  %>
+

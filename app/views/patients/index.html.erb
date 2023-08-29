@@ -3,14 +3,9 @@
 
 
 <% @patients.each do |patient| %>
-
   <a href="patients/<%=patient.id%>">Go to Patient <%= patient.name %></a>
   <a href="/patients/<%= patient.id %>/edit">Edit Patient <%= patient.name %> Data</a>
-<form action="/patients/<%= patient.id %>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete patient <%= patient.name %> "/>
-</form>
+<%= button_to "Delete #{patient.name}", "/patients/#{patient.id}", method: :delete %>
 <table>
   <% patient.attributes.each_pair do |key, value|%>
     <tr>

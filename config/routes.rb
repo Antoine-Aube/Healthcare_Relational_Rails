@@ -24,3 +24,4 @@ Rails.application.routes.draw do
   delete "/hospitals/:id", to: "hospitals#destroy"
   delete "/patients/:id", to: "patients#destroy"
 end
+

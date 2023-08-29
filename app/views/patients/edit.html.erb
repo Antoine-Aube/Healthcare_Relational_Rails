@@ -1,6 +1,6 @@
 <h1>Edit patient data for <%=@patient.name%></h1>
 
-<form action="/patients/<%= @patient.id %>" method="post">
+<!--<form action="/patients/<%= @patient.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="PATCH"/>
   <label for="name">Patient Name:</label>
@@ -12,4 +12,16 @@
   <label for="in_patient">In Patient:</label>
   <input type="checkbox" id="in_patient" name="patient[in_patient]" <%= @patient.in_patient ? "checked" : "" %>><br>
   <input type="submit" id="submit" name="Update">
-</form>
+</form>-->
+
+<%= form_with url: "/patients/#{@patient.id}", method: :patch do |form| %>
+  <%= form.label :name, "Patient Name:" %>
+  <%= form.text_field :name, value: "#{@patient.name}" %><br>
+  <%= form.label :age, "Age:" %>
+  <%= form.text_field :age, value: "#{@patient.age}" %><br>
+  <%= form.label :ailment, "Ailment:" %>
+  <%= form.text_field :ailment, value: "#{@patient.ailment}" %><br>
+  <%= form.label :in_patient, "In Patient:" %>
+  <%= form.check_box :in_patient,  {checked: (@patient.in_patient ? true : false) }%><br>
+  <%= form.submit "Submit" %>
+<% end %>

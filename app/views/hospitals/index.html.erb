@@ -5,11 +5,7 @@
   <a href= "hospitals/<%= hospital.id%>">
   <h3><%= hospital.name %> Established: <%= hospital.created_at %></h3></a>
   <a href="/hospitals/<%= hospital.id %>/edit">Edit <%= hospital.name %> Data</a>
-<form action="/hospitals/<%= hospital.id %>" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete <%= hospital.name %>"/>
-</form>
+<%= button_to "Delete #{hospital.name}", "/hospitals/#{hospital.id}", method: :delete  %>
 
 <% end %>
 <br>

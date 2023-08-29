@@ -11,14 +11,14 @@ RSpec.describe "Patients Edit" do
     it "has fields to edit the patient selected with pre-populated content" do 
       visit "/patients/#{@patient.id}/edit"
       expect(page).to have_content("Edit patient data for Jeff")
-      expect(page).to have_field("patient[name]", with: "Jeff")
-      expect(page).to have_field("patient[age]", with: 44)
-      expect(page).to have_field("patient[ailment]", with: "Broken Leg")
-      expect(page).to have_checked_field("patient[in_patient]")
+      expect(page).to have_field(:name, with: "Jeff")
+      expect(page).to have_field(:age, with: 44)
+      expect(page).to have_field(:ailment, with: "Broken Leg")
+      expect(page).to have_checked_field(:in_patient)
 
-      expect(page).to have_button("submit")
+      expect(page).to have_button("Submit")
 
-      click_button "submit"
+      click_button "Submit"
 
       expect(current_path).to eq("/patients/#{@patient.id}")
     end
@@ -26,12 +26,12 @@ RSpec.describe "Patients Edit" do
     it "can edit fields with new content that then render on '/patient/patient.id' page" do
       visit "/patients/#{@patient.id}/edit"
 
-      fill_in("patient[name]", with: "Not Jeff")
-      fill_in("patient[age]", with: 102)
-      fill_in("patient[ailment]", with: "cured")
-      uncheck("patient[in_patient]")
+      fill_in(:name, with: "Not Jeff")
+      fill_in(:age, with: 102)
+      fill_in(:ailment, with: "cured")
+      uncheck(:in_patient)
 
-      click_button "submit"
+      click_button "Submit"
     
       expect(current_path).to eq("/patients/#{@patient.id}")
       expect(page).to have_content("Not Jeff")

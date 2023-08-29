@@ -1,0 +1,31 @@
+<!-- Delete Button for patient-->
+
+<form action="/patients/<%= patient.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete patient <%= patient.name %> "/>
+</form>
+
+<!-- Delete Button for Hospital-->
+
+<form action="/hospitals/<%= @hospital.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete hospital"/>
+</form>
+
+<!--Edit Form for hospitals -->
+<form action="/hospitals/<%= @hospital.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH"/>
+  <label for="name">Hospital Name:</label>
+  <input type="text" id="name" name="hospital[name]" value="<%= @hospital.name%>"><br>
+  <label for="rating">Rating:</label>
+  <input type="text" id="rating" name="hospital[rating]" value="<%= @hospital.rating%>"><br>
+  <label for="trauma">Trauma:</label>
+  <input type="checkbox" id="trauma" name="hospital[trauma]" <%= @hospital.trauma ? "checked" : "" %>><br>
+  <label for="research">Research:</label>
+  <input type="checkbox" id="research" name="hospital[research]" <%= @hospital.research ? "checked" : "" %>><br>
+  <input type="submit" id="submit" name="Update">
+</form>
+

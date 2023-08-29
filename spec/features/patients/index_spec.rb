@@ -45,7 +45,7 @@ RSpec.describe "Patients Index" do
       expect(page).to have_content("Jeff")
       expect(page).to have_content("Vanessa")
 
-      click_button("delete patient Jeff")
+      click_button("Delete Jeff")
       expect(current_path).to eq("/patients")
 
       expect(page).to_not have_content("Jeff")
