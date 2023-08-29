@@ -3,9 +3,9 @@
 
 
 <% @patients.each do |patient| %>
-  <a href="patients/<%=patient.id%>">Go to Patient <%= patient.name %></a>
-  <a href="/patients/<%= patient.id %>/edit">Edit Patient <%= patient.name %> Data</a>
-<%= button_to "Delete #{patient.name}", "/patients/#{patient.id}", method: :delete %>
+  <%= link_to "Go to Patient #{patient.name}", "patients/#{patient.id}" %>
+  <%= link_to "Edit Patient #{patient.name} Data", "/patients/#{patient.id}/edit" %>
+  <%= button_to "Delete #{patient.name}", "/patients/#{patient.id}", method: :delete %>
 <table>
   <% patient.attributes.each_pair do |key, value|%>
     <tr>

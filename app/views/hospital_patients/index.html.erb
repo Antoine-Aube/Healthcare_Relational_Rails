@@ -1,10 +1,11 @@
 
 <h1><%= @hospital.name %> Patients</h1>
-<a href="/hospitals/<%= @hospital.id%>/patients?sorted=true">Sort Patients Alphabetically</a><br>
+<%= link_to "Sort Patients Alphabetically", "/hospitals/#{@hospital.id}/patients?sorted=true" %>
+<br>
 <br>
 <% @patients.each do |patient| %>
-<a href="patients/<%=patient.id%>">Go to Patient</a>
-<a href="/patients/<%= patient.id %>/edit">Edit Patient Data</a>
+<%= link_to "Go to Patient", "patients/#{patient.id}" %>
+<%= link_to "Edit Patient Data", "/patients/#{patient.id}/edit" %>
 <%= button_to "Delete #{patient.name}", "/patients/#{patient.id}", method: :delete %>
 <table>
 <% patient.attributes.each_pair do |key, value|%>
@@ -26,4 +27,4 @@
   <input type="submit" id="submit" name="submit">
 </form>
 
-<a href="/hospitals/<%=@hospital.id%>/patients/new">Create New Patient</a>
+<%= link_to "Create New Patient", "/hospitals/#{@hospital.id}/patients/new"  %>

@@ -73,3 +73,9 @@
   <input type="checkbox" id="research" name="hospital[research]"><br>
   <input type="submit" id="submit" name="submit">
 </form>
+
+<!--Links-->
+
+<a href="/hospitals/<%=@hospital.id%>/patients/new">Create New Patient</a>
+
+<a href="/hospitals/<%= @hospital.id%>/patients?sorted=true">Sort Patients Alphabetically</a><br>

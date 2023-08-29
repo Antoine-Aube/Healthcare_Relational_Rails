@@ -5,7 +5,7 @@
 <!--patient count from hospital model -->
 <p>This hospital has <%= @hospital.patient_count %> patients </p>
 <!-- Link to Patients in the hospital-->
-<a href= "/hospitals/<%= @hospital.id %>/patients"><%= @hospital.name %> patients</a>
+<%= link_to "#{@hospital.name} patients", "/hospitals/#{@hospital.id}/patients" %>
 <br>
 <table>
   <% @hospital.attributes.each_pair do |key, value|%>
@@ -17,7 +17,7 @@
       <br>
 </table>
 <br>
-<a href="/hospitals/<%= @hospital.id %>/edit">Edit Hospital Data</a>
+<%= link_to "Edit Hospital Data", "/hospitals/#{@hospital.id}/edit" %>
 <br>
 <br>
 <%= button_to "Delete #{@hospital.name}", "/hospitals/#{@hospital.id}", method: :delete  %>

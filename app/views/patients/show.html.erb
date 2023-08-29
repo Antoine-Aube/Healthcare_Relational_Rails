@@ -13,7 +13,7 @@
       <br>
 </table>
 <br>
-<a href="/patients/<%= @patient.id %>/edit">Edit Patient Data</a>
+<%= link_to "Edit Patient Data", "/patients/#{@patient.id}/edit" %>
 <br>
 <br>
 <%= button_to "Delete #{@patient.name}", "/patients/#{@patient.id}", method: :delete %>
