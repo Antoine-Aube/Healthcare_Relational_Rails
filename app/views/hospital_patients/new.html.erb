@@ -1,15 +1,14 @@
 
 <h1>Add New Patient to <%= @hospital.name %></h1>
 
-<form action="/hospitals/<%=@hospital.id%>/patients" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="name">Patient Name:</label>
-  <input type="text" id="name" name="patient[name]"><br>
-  <label for="age">Age:</label>
-  <input type="text" id="age" name="patient[age]"><br>
-  <label for="ailment">Ailment:</label>
-  <input type="text" id="ailment" name="patient[ailment]"><br>
-  <label for="in_patient">In Patient:</label>
-  <input type="checkbox" id="in_patient" name="patient[in_patient]"><br>
-  <input type="submit" value= "Create new patient" id="submit" name="submit">
-</form>
+<%= form_with url: "/hospitals/#{@hospital.id}/patients", method: :post do |form|  %>
+  <%= form.label :name, "Patient Name:" %>
+  <%= form.text_field :name %><br>
+  <%= form.label :age, "Age:" %>
+  <%= form.text_field :age %><br>
+  <%= form.label :ailment, "Ailment:" %>
+  <%= form.text_field :ailment %><br>
+  <%= form.label :in_patient, "In Patient:" %>
+  <%= form.check_box :in_patient %><br>
+  <%= form.submit "Submit" %>
+<% end %>

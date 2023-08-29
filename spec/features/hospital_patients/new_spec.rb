@@ -15,21 +15,21 @@ RSpec.describe "HospitalPatients New" do
       visit "/hospitals/#{@hospital_1.id}/patients/new"
       
       expect(page).to have_content("Add New Patient to St. Mary's")
-      expect(page).to have_field("patient[name]")
-      expect(page).to have_field("patient[age]")
-      expect(page).to have_field("patient[ailment]")
-      expect(page).to have_unchecked_field("patient[in_patient]")
+      expect(page).to have_field(:name)
+      expect(page).to have_field(:age)
+      expect(page).to have_field(:ailment)
+      expect(page).to have_unchecked_field(:in_patient)
     end 
     
     it "accepts user input and creates a new hospital" do 
       visit "/hospitals/#{@hospital_1.id}/patients/new"
 
-      fill_in("patient[name]", with: "Monica")
-      fill_in("patient[age]", with: 4)
-      fill_in("patient[ailment]", with: "Whooping Cough")
-      check("patient[in_patient]")
+      fill_in(:name, with: "Monica")
+      fill_in(:age, with: 4)
+      fill_in(:ailment, with: "Whooping Cough")
+      check(:in_patient)
 
-      click_button("submit")
+      click_button("Submit")
 
       expect(current_path).to eq("/hospitals/#{@hospital_1.id}/patients")
 
