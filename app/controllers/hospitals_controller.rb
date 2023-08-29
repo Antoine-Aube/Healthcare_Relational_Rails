@@ -32,10 +32,10 @@ class HospitalsController < ApplicationController
   def update
     hospital = Hospital.find(params[:id])
     hospital.update({
-      name: params[:hospital][:name],
-      rating: params[:hospital][:rating],
-      trauma: (params[:hospital][:trauma] || false),
-      research: (params[:hospital][:research] || false)
+      name: params[:name],
+      rating: params[:rating],
+      trauma: (params[:trauma] || false),
+      research: (params[:research] || false)
     })
     hospital.save
 

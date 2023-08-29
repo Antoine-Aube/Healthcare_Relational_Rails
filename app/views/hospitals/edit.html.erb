@@ -1,15 +1,13 @@
 <h1>Edit <%=@hospital.name%> Data</h1>
 
-<form action="/hospitals/<%= @hospital.id %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="PATCH"/>
-  <label for="name">Hospital Name:</label>
-  <input type="text" id="name" name="hospital[name]" value="<%= @hospital.name%>"><br>
-  <label for="rating">Rating:</label>
-  <input type="text" id="rating" name="hospital[rating]" value="<%= @hospital.rating%>"><br>
-  <label for="trauma">Trauma:</label>
-  <input type="checkbox" id="trauma" name="hospital[trauma]" <%= @hospital.trauma ? "checked" : "" %>><br>
-  <label for="research">Research:</label>
-  <input type="checkbox" id="research" name="hospital[research]" <%= @hospital.research ? "checked" : "" %>><br>
-  <input type="submit" id="submit" name="Update">
-</form>
+<%= form_with url: "/hospitals/#{@hospital.id}", method: :patch do |form| %>
+  <%= form.label :name, "Hospital Name:" %>
+  <%= form.text_field :name, value: "#{@hospital.name}" %><br>
+  <%= form.label :rating, "Rating:" %>
+  <%= form.text_field :rating, value: "#{@hospital.rating}" %><br>
+  <%= form.label :trauma, "Trauma:" %>
+  <%= form.check_box :trauma, {checked: (@hospital.trauma ? true : false) }%><br>
+  <%= form.label :research, "Research:" %>
+  <%= form.check_box :research,  {checked: (@hospital.research ? true : false) }%><br>
+  <%= form.submit "Submit" %>
+<% end %>
