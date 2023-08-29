@@ -19,10 +19,16 @@ class Hospital < ApplicationRecord
     self.patients.where("age > ?", "#{patient_age}")
   end
 
+  # def self.order_by_patient_count
+  #   left_joins(:patients)
+  #   .select('hospitals.*, COUNT(patients.id) AS patient_count')
+  #   .group('hospitals.id')
+  #   .order('patient_count DESC')
+  # end
+
   def self.order_by_patient_count
     left_joins(:patients)
-    .select('hospitals.*, COUNT(patients.id) AS patient_count')
-    .group('hospitals.id')
-    .order('patient_count DESC')
+      .group(:id)
+      .order("count(patients.id) desc")
   end
 end

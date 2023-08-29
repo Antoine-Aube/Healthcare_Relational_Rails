@@ -3,7 +3,7 @@ class HospitalPatientsController < ApplicationController
     @hospital = Hospital.find(params[:id])
     if params[:sorted] == "true"
       @patients = @hospital.order_patients_alphabetically
-    elsif params[:threshold]
+    elsif params[:threshold] != nil
       @patients = @hospital.age_threshold(params[:threshold])
     else
       @patients = @hospital.patients
