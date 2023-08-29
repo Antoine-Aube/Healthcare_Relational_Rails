@@ -14,10 +14,10 @@ class HospitalsController < ApplicationController
 
   def create
     hospital = Hospital.new({
-      name: params[:hospital][:name],
-      rating: params[:hospital][:rating],
-      trauma: (params[:hospital][:trauma] || false),
-      research: (params[:hospital][:research] || false)
+      name: params[:name],
+      rating: params[:rating],
+      trauma: params[:trauma],
+      research: params[:research]
     })
 
     hospital.save

@@ -17,7 +17,7 @@ class PatientsController < ApplicationController
       name: params[:name],
       age: params[:age],
       ailment: params[:ailment],
-      in_patient: (params[:in_patient] || false)
+      in_patient: params[:in_patient]
     })
     patient.save
 

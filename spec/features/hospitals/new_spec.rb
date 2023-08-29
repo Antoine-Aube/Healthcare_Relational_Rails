@@ -12,26 +12,26 @@ RSpec.describe "Hospitals New" do
       visit "/hospitals/new"
       
       expect(page).to have_content("Enter information for a new Hospital")
-      expect(page).to have_field("hospital[name]")
-      expect(page).to have_field("hospital[rating]")
-      expect(page).to have_unchecked_field("hospital[trauma]")
-      expect(page).to have_unchecked_field("hospital[research]")
+      expect(page).to have_field(:name)
+      expect(page).to have_field(:rating)
+      expect(page).to have_unchecked_field(:trauma)
+      expect(page).to have_unchecked_field(:research)
     end 
     
     it "accepts user input and creates a new hospital" do 
       visit "/hospitals/new"
 
-      fill_in("hospital[name]", with: "St. Mary's")
-      fill_in("hospital[rating]", with: 4)
-      check("hospital[trauma]")
-      check("hospital[research]")
+      fill_in(:name, with: "Intermountain")
+      fill_in(:rating, with: 4)
+      check(:trauma)
+      check(:research)
 
-      click_button("submit")
+      click_button("Submit")
 
       expect(current_path).to eq("/hospitals")
 
       expect(Hospital.all.count).to eq(1)
-      expect(page).to have_content("St. Mary's")
+      expect(page).to have_content("Intermountain")
     end
   end
 end
