@@ -4,7 +4,7 @@ class HospitalsController < ApplicationController
     @hospitals = Hospital.order_by_creation
       if params[:sortedpatients] == "true"
         @hospitals = Hospital.order_by_patient_count
-      else [:exact] != nil
+      elsif params[:exact] != nil
         @hospitals = Hospital.exact_search(params[:exact])
       end
   end
